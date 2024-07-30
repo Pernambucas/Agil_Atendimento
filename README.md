@@ -24,21 +24,17 @@ Para conceder acesso a funcionários para testarem, fazemos a criação de perfi
 
 ```mermaid
 sequenceDiagram
-    participant Pefisa
-    participant DepartamentoContábil
+    participant Squad
+    participant áreas relacionadas
     participant Colaborador
     participant Sistema
 
-    Pefisa->>DepartamentoContábil: Verificar requisitos e realizar testes
-    DepartamentoContábil->>Pefisa: Enviar resultados dos testes
-
-    Pefisa->>Sistema: Criar perfis de acesso
-    Sistema->>Pefisa: Perfis de acesso criados
-
-    Pefisa->>Colaborador: Solicitar chapa, nome e e-mail
-    Colaborador->>Pefisa: Enviar informações
-    Pefisa->>Sistema: Criar perfis com informações do colaborador
-    Sistema->>Colaborador: Enviar e-mail com senha temporária
+    Squad->>áreas relacionadas: Verificar requisitos e realizar testes
+    áreas relacionadas->>Squad: Enviar resultados dos testes
+        Squad->>Colaborador: Solicitar chapa, nome e e-mail
+    Squad->>Sistema: Criar perfis de acesso
+    Sistema->>Squad: Perfis criados
+    Squad->>Colaborador: Enviar e-mail com senha temporária
 ```
 
 ### Omni e Chatbots
@@ -56,20 +52,14 @@ Os documentos demonstram o foco da nova feature, objetivo, ferramentas necessár
 ```mermaid
 sequenceDiagram
     participant Estagiário
-    participant Plusoft
     participant Sistema
+    participant Plusoft
 
     Estagiário->>Sistema: Levantamento de requisitos
     Sistema->>Estagiário: Gerar documentos em Word
 
     Estagiário->>Plusoft: Enviar documentos para avaliação
     Plusoft->>Estagiário: Avaliar e implementar melhorias
-
-    Estagiário->>Sistema: Implementar bloqueio de cartão roubado no chatbot
-    Sistema->>Estagiário: Bloqueio de cartão roubado implementado
-
-    Estagiário->>Sistema: Implementar antecipação de parcelas via chatbot
-    Sistema->>Estagiário: Antecipação de parcelas implementada
 
     Estagiário->>Sistema: Testar endpoints com Postman
     Sistema->>Estagiário: Resultados dos testes e simulações
